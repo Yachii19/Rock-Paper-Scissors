@@ -1,0 +1,93 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Rowdies', sans-serif;
+    background-color: #3c3c3c;
+    color: whitesmoke;
+}
+
+.main-container {
+    text-align: center;
+    padding-top: 40px;
+    height: 100vh;
+}
+
+.game-title {
+    font-size: 40px;
+}
+
+.result {
+    margin-top: 70px;
+    margin-bottom: 4%;
+    font-size: 30px;
+}
+
+.moves-played {
+    display: flex;
+    align-items: center;
+    gap: 200px;
+}
+
+.moves-played .first-col{
+    flex: 1;
+    text-align: end;
+
+}
+
+.moves-played .second-col {
+    flex: 1;
+    text-align: start;
+}
+
+.moves-played div img {
+    width: 200px;
+    height: 200px;
+}
+
+.player-choice-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.move-wrapper {
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
+    border: 2px solid white;
+    padding: 40px;
+    margin-top: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.move-wrapper:hover {
+    background-color: whitesmoke;
+}
+
+.player-move {
+    width: 60px;
+    height: 60px;
+}
+
+.reset-btn {
+    font-family: 'Arial';
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 40px;
+    padding: 10px 30px;
+    cursor: pointer;
+    border: 2px solid white;
+    background-color: transparent;
+    color: whitesmoke;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.reset-btn:hover {
+    background-color: whitesmoke;
+    color: black;
+}
