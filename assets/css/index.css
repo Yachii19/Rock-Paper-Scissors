@@ -74,7 +74,8 @@ body {
     height: 60px;
 }
 
-.reset-btn {
+.reset-btn,
+.auto-play-btn {
     font-family: 'Arial';
     font-size: 15px;
     font-weight: 500;
@@ -87,7 +88,8 @@ body {
     transition: background-color 0.3s, color 0.3s;
 }
 
-.reset-btn:hover {
+.reset-btn:hover,
+.auto-play-btn:hover {
     background-color: whitesmoke;
     color: black;
 }
