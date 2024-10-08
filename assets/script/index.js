@@ -18,9 +18,11 @@ function autoPlay(){
             playGame(playerMove);
         }, 1300)
         isPlaying = true;
+        document.querySelector('.auto-play-btn').innerHTML = 'Stop Playing';
     } else {
         clearInterval(intervalID);
         isPlaying = false;
+        document.querySelector('.auto-play-btn').innerHTML = 'Auto Play';
     }
 }
 
@@ -52,6 +54,7 @@ document.querySelector('.reset-btn')
 document.querySelector('.auto-play-btn')
     .addEventListener('click', () => {
         autoPlay();
+        
     })
 
 // Added keyboard presses
