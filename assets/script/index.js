@@ -24,6 +24,55 @@ function autoPlay(){
     }
 }
 
+document.querySelector('.rock-btn')
+    .addEventListener('click', () => {
+        playGame('Rock');
+    });
+
+document.querySelector('.paper-btn')
+    .addEventListener('click', () => {
+        playGame('Paper');
+    })
+
+document.querySelector('.scissor-btn')
+    .addEventListener('click', () => {
+        playGame('Scissors');
+    })
+
+document.querySelector('.reset-btn')
+    .addEventListener('click', () => {
+        score.wins = 0;
+        score.losses= 0;
+        score.tied = 0;
+
+        localStorage.removeItem('score');
+        updateScoreElement();
+    })
+
+document.querySelector('.auto-play-btn')
+    .addEventListener('click', () => {
+        autoPlay();
+    })
+
+// Added keyboard presses
+document.body.addEventListener('keydown', (event) => {
+    if (event.key === 'r'){
+        playGame('Rock');
+    } else if (event.key === 'p'){
+        playGame('Paper');
+    } else if (event.key === 's'){
+        playGame('Scissors');
+    } else if (event.key === 'a'){
+        autoPlay();
+    } else if (event.key === 'd'){
+        score.wins = 0;
+        score.losses= 0;
+        score.tied = 0;
+
+        localStorage.removeItem('score');
+        updateScoreElement();
+    }
+})
 
 // Main Function to Call the Game
 function playGame(playerMove) {

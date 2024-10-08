@@ -29,21 +29,15 @@
         <p class="js-gamestats stats"></p>
         
         <div class="player-choice-container">
-            <button class="move-wrapper" onclick="
-            playGame('Rock');
-            ">
+            <button class="move-wrapper rock-btn">
                 <img src="./assets/icons/Rock-emoji.png" alt="rock.png" class="player-move">
             </button>
     
-            <button class="move-wrapper" onclick="
-            playGame('Paper');
-            ">
+            <button class="move-wrapper paper-btn">
                 <img src="./assets/icons/Paper-emoji.png" alt="paper.png" class="player-move">
             </button>
     
-            <button class="move-wrapper" onclick="
-            playGame('Scissors');
-            ">
+            <button class="move-wrapper scissor-btn">
                 <img src="./assets/icons/Scissors-emoji.png" alt="scissors.png" class="player-move">
             </button>
     
@@ -51,19 +45,9 @@
         </div>
        
         <div>
-            <button onclick="
-            score.wins = 0;
-            score.losses= 0;
-            score.tied = 0;
+            <button class="reset-btn">Reset Score</button>
 
-            localStorage.removeItem('score');
-            updateScoreElement();
-
-        " class="reset-btn">Reset Score</button>
-
-            <button onclick="
-            autoPlay();
-            " class="auto-play-btn">Auto Play</button>
+            <button class="auto-play-btn">Auto Play</button>
         </div>
         
 
