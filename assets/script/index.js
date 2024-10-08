@@ -43,12 +43,9 @@ document.querySelector('.scissor-btn')
 
 document.querySelector('.reset-btn')
     .addEventListener('click', () => {
-        score.wins = 0;
-        score.losses= 0;
-        score.tied = 0;
-
-        localStorage.removeItem('score');
-        updateScoreElement();
+        
+        showResetConfirmation()
+        
     })
 
 document.querySelector('.auto-play-btn')
@@ -67,13 +64,8 @@ document.body.addEventListener('keydown', (event) => {
         playGame('Scissors');
     } else if (event.key === 'a'){
         autoPlay();
-    } else if (event.key === 'd'){
-        score.wins = 0;
-        score.losses= 0;
-        score.tied = 0;
-
-        localStorage.removeItem('score');
-        updateScoreElement();
+    } else if (event.key === 'Backspace'){
+        showResetConfirmation();
     }
 })
 
@@ -152,4 +144,51 @@ function pickComputerMove() {
         
 function updateScoreElement() {
     document.querySelector('.js-gamestats').innerHTML = `Wins: ${score.wins}, Losses ${score.losses}, Ties: ${score.tied}`;
+}
+
+function resetScore() {
+    score.wins = 0;
+    score.losses= 0;
+    score.tied = 0;
+
+    localStorage.removeItem('score');
+    updateScoreElement();
+}
+
+function showResetConfirmation(){
+    document.querySelector('.js-prompt').innerHTML = `<div>
+        Are you sure you want to reset the score?
+    </div>
+    <div>
+        <button class='yes-btn'>Yes</button>
+        <button class='no-btn'>No</button>
+    </div>
+    <div class="x-btn">X</div>`;
+
+    const promptElement = document.querySelector('.js-prompt');
+    promptElement.classList.remove('css-prompt');
+    promptElement.classList.add('css-prompt-show');
+
+    document.querySelector('.yes-btn')
+        .addEventListener('click', () => {
+            resetScore();
+            hideResetConfiguration();
+        })
+    
+    document.querySelector('.no-btn')
+        .addEventListener('click', () => {
+            hideResetConfiguration();
+        })
+
+    document.querySelector('.x-btn')
+        .addEventListener('click', () => {
+            hideResetConfiguration();
+        })
+}
+
+function hideResetConfiguration(){
+    document.querySelector('.js-prompt').innerHTML = '';
+    const promptElement = document.querySelector('.js-prompt');
+    promptElement.classList.remove('css-prompt-show');
+    promptElement.classList.add('css-prompt');
 }

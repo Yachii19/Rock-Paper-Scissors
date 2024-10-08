@@ -13,7 +13,7 @@ body {
 .main-container {
     text-align: center;
     padding-top: 40px;
-    height: 100vh;
+    height: 120vh;
 }
 
 .game-title {
@@ -21,8 +21,8 @@ body {
 }
 
 .result {
-    margin-top: 70px;
-    margin-bottom: 4%;
+    margin-top: 60px;
+    margin-bottom: 2%;
     font-size: 30px;
 }
 
@@ -89,7 +89,103 @@ body {
 }
 
 .reset-btn:hover,
-.auto-play-btn:hover {
+.auto-play-btn:hover{
     background-color: whitesmoke;
     color: black;
+}
+
+.css-prompt{
+    opacity: 0;
+    animation: pop-back 0.5s ease backwards;
+}
+
+@keyframes pop-back {
+    0% {
+        transform: scale(1);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(0.8);
+        opacity: 1;
+    }
+}
+
+
+.css-prompt-show {
+    display: flex;
+    flex-direction: column;
+    border: none;
+    justify-content: center;
+    height: 130px;
+    border-radius: 10px;
+    background-color: rgb(234, 235, 242);
+    color: black;
+    box-shadow: 0px 0px 4px rgba(179, 182, 184, 0.83);
+    animation: pop-up 0.5s ease forwards;
+    
+    position: absolute;
+    top: 30%;
+    left: 40%;
+    right: 40%;
+    bottom: 50%;
+}
+
+
+@keyframes pop-up {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+.js-prompt > :nth-child(1){
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.js-prompt > :nth-child(2) > button{
+    font-family: 'Arial';
+    font-size: 15px;
+    padding: 10px 50px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.js-prompt > :nth-child(2) > :nth-child(1){
+    background-color: rgb(44, 10, 193);
+    color: white;
+}
+
+.js-prompt > :nth-child(2) > :nth-child(2){
+    background-color: rgb(103, 101, 110);
+    color: white;
+}
+
+.js-prompt > :nth-child(2) > :nth-child(1):hover {
+    opacity: 0.8;
+}
+
+.js-prompt > :nth-child(2) > :nth-child(2):hover{
+    opacity: 0.8;
+}
+
+.js-prompt > :nth-child(3) {
+    font-size: 10px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    padding: 8px;
+    cursor: pointer;
+    color: rgb(199, 199, 199);
+    transition: color 0.15s;
+}
+
+.js-prompt > :nth-child(3):hover {
+    color: rgb(192, 18, 18);
 }
